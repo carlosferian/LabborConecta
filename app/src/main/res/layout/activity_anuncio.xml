@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AnuncioActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/anunciosRecyclerView"
+        android:layout_width="335dp"
+        android:layout_height="310dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/anunciosTextView" />
+
+    <TextView
+        android:id="@+id/anunciosTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="283dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/an_ncios"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/anunciosRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginBottom="277dp"
+        android:backgroundTint="@color/white"
+        android:onClick="adicionarAnuncio"
+        android:text="@string/novo_an_ncio"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/anunciosRecyclerView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">LabborConecta</string>
+    <string name="entrar">Entrar</string>
+    <string name="string_entrar">Entrar</string>
+    <string name="textview">TextView</string>
+    <string name="digite_sua_senha">Digite sua senha</string>
+    <string name="usu_rio">Usuário</string>
+    <string name="login">Login</string>
+    <string name="no_cadastrado">Não é cadastrado?</string>
+    <string name="escolha_um_nome_de_usu_rio">Escolha um nome de usuário</string>
+    <string name="nome_de_usu_rio">Nome de usuário</string>
+    <string name="escolha_uma_senha">Escolha uma senha</string>
+    <string name="senha">Senha</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="novo_an_ncio">Novo Anúncio</string>
+    <string name="an_ncios">Anúncios</string>
+
+</resources>
