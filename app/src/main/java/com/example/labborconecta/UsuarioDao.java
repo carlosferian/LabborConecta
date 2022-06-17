@@ -35,8 +35,6 @@ public class UsuarioDao {
         String [] selection={usuario, password};
         try {
             Cursor cursor = db.rawQuery(query, selection);
-            //Cursor cursor= db.rawQuery("Select usuario,senha FROM usuario WHERE usuario=? AND password=?",
-            //new  String[]{usuario,password} );
             cursor.moveToFirst();
 
             if(cursor.getCount()>0){
@@ -51,14 +49,7 @@ public class UsuarioDao {
             Log.d("Erro", "loginUsuario() returned: " + true);
             e.printStackTrace();
         }
-       /* if(cursor.getCount()>0){
 
-            return true;
-        }
-        cursor.close();
-        db.close();
-
-        return false;*/
         return true;
     }
 

@@ -37,11 +37,6 @@ public class NovoAnuncioActivity extends AppCompatActivity {
         anuncios.setTelefone(telefone.getText().toString());
         anuncios.setRamo(ramo.getText().toString());
         anuncios.setCorpo(corpoDoAnuncio.getText().toString());
-        Log.i("inserindo", "inserirNovoAnuncio: " + nome);
-        Log.i("inserindo", "inserirNovoAnuncio: " + telefone);
-        Log.i("inserindo", "inserirNovoAnuncio: " + ramo);
-        Log.i("inserindo", "inserirNovoAnuncio: " + corpoDoAnuncio);
-
         dao.inserirAnuncio(anuncios);
         Toast.makeText( getApplicationContext(), "Anunciado", Toast.LENGTH_SHORT).show();
         Intent intent= new Intent(this,AnuncioActivity.class);

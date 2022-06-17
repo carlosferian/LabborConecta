@@ -31,26 +31,4 @@ public class AnunciosDao {
         return banco.insert("anuncios", null, values);
     }
 
-
-
-    public ArrayList<Anuncios> obterAnuncios() {
-        SQLiteDatabase database = conexao.getReadableDatabase();
-        Cursor cursor = database.query("anuncios", null, null,
-                null, null, null, null);
-        ArrayList<Anuncios> anuncios = new ArrayList<>();
-        if(cursor.moveToFirst()){
-            do{
-                long id =cursor.getLong(cursor.getColumnIndexOrThrow("id"));
-                String nome= cursor.getString(cursor.getColumnIndexOrThrow("nome"));
-                String telefone= cursor.getString(cursor.getColumnIndexOrThrow("telefone"));
-                String corpo= cursor.getString(cursor.getColumnIndexOrThrow("corpo"));
-                anuncios.add(new Anuncios(id, nome, telefone, corpo));
-
-
-            }while(cursor.moveToNext());
-        }
-        database.close();
-
-        return anuncios;
-    }
 }

@@ -42,49 +42,4 @@ public class Conexao extends SQLiteOpenHelper {
 
     }
 
-    public long criarContatoNoBanco(Anuncios anuncios){
-        ContentValues values= new ContentValues();
-        values.put("nome", anuncios.getNome());
-        values.put("telefone", anuncios.getTelefone());
-        values.put("ramo", anuncios.getRamo());
-        values.put("corpo", anuncios.getCorpo());
-        SQLiteDatabase database= getWritableDatabase();
-        long id= database.insert("anuncios", null, values);
-        database.close();
-        return id;
-    }
-
-    public ArrayList<Anuncios> obterAnuncios() {
-        //SQLiteDatabase database = getReadableDatabase();
-        //Cursor cursor = database.query("anuncios", null, null,
-               // null, null, null, null);
-        ArrayList<Anuncios> anuncios = new ArrayList<>();
-        //if(cursor.moveToFirst()){
-          //  do{
-               // long id =cursor.getLong(cursor.getColumnIndexOrThrow("id"));
-                //String nome= cursor.getString(cursor.getColumnIndexOrThrow("nome"));
-                //String telefone= cursor.getString(cursor.getColumnIndexOrThrow("telefone"));
-                //String ramo= cursor.getString(cursor.getColumnIndexOrThrow("ramo"));
-                //String corpo= cursor.getString(cursor.getColumnIndexOrThrow("corpo"));
-                long id= 1;
-                String nome= "pedro";
-                String telefone= "3325121";
-                String ramo= "putaria";
-                String corpo= " nasnsjdjds sdjsjds sjdsdjs ds ";
-
-                Log.i("obtendo", "obterAnuncios:" + id);
-                Log.i("obtendo", "obterAnuncios: " + nome);
-                Log.i("obtendo", "obterAnuncios: " + telefone);
-                Log.i("obtendo", "obterAnuncios: " + ramo);
-                Log.i("obtendo", "obterAnuncios: " + corpo);
-
-                anuncios.add(new Anuncios(id, nome, telefone,ramo,  corpo));
-
-
-           // }while(cursor.moveToNext());
-       // }
-       // database.close();
-
-        return anuncios;
-    }
 }

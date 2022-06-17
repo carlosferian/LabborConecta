@@ -1,7 +1,6 @@
 package com.example.labborconecta;
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -14,7 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.labborconecta.banco.Conexao;
-import com.example.labborconecta.model.DataModel;
 
 import java.util.ArrayList;
 
