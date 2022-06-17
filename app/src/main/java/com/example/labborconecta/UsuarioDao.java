@@ -17,12 +17,12 @@ public class UsuarioDao {
 
 
     public UsuarioDao(Context context){
-        conexao= new Conexao(context);
+        conexao = new Conexao(context);
 
     }
 
     public long inserirUsuario(Usuario usuario){
-        SQLiteDatabase db= conexao.getWritableDatabase();
+        SQLiteDatabase db = conexao.getWritableDatabase();
         ContentValues values= new ContentValues();
         values.put("usuario", usuario.getUsuario());
         values.put("senha", usuario.getSenha());

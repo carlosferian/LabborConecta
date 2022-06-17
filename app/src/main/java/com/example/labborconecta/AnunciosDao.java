@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.example.labborconecta.banco.Conexao;
 
@@ -28,7 +29,17 @@ public class AnunciosDao {
         values.put("telefone", anuncio.getTelefone());
         values.put("ramo", anuncio.getRamo());
         values.put("corpo", anuncio.getCorpo());
-        return banco.insert("anuncios", null, values);
+        int count = (int) banco.insert("anuncios", null, values);
+        banco.close();
+        return count;
+
     }
 
+    public int removerAnuncio(long id){
+        String idAnuncio = String.valueOf(id);
+        Log.d("teste", idAnuncio);
+        int count = banco.delete("anuncios", "id=?", new String[]{idAnuncio});
+        banco.close();
+        return count;
+    }
 }

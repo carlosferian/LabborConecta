@@ -21,7 +21,6 @@ public class Conexao extends SQLiteOpenHelper {
     private static final int version= 1;
 
 
-
     public Conexao(@Nullable Context context) {
 
         super(context, name, null, version);

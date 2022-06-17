@@ -13,6 +13,13 @@ public class Anuncios {
         this.ramo = ramo;
         this.corpo = corpo;
     }
+    public Anuncios (int id, String nome, String telefone, String ramo, String corpo){
+        this.id = id;
+        this.nome = nome;
+        this.telefone = telefone;
+        this.ramo = ramo;
+        this.corpo = corpo;
+    }
     public Anuncios(){
 
     }
@@ -22,6 +29,8 @@ public class Anuncios {
 
     public Anuncios(long id, String nome, String telefone, String ramo, String corpo) {
     }
+
+    public long getID() { return id; }
 
     public String getNome() {
         return nome;
@@ -54,4 +63,6 @@ public class Anuncios {
     public void setCorpo(String corpo) {
         this.corpo = corpo;
     }
+
+
 }

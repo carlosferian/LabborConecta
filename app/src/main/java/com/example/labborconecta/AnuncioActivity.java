@@ -30,7 +30,7 @@ public class AnuncioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_anuncio);
         recyclerView = findViewById(R.id.anunciosRecyclerView);
 
-        adapter= new AnunciosAdapter(AnuncioActivity.this, updateAnuncios());
+        adapter= new AnunciosAdapter(AnuncioActivity.this, atualizaAnuncios());
         RecyclerView.LayoutManager layoutManager= new LinearLayoutManager(
             AnuncioActivity.this, LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(layoutManager);
@@ -49,19 +49,20 @@ public class AnuncioActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
-    public ArrayList<Anuncios> updateAnuncios(){
-        anuncia= new ArrayList<Anuncios>();
+    public ArrayList<Anuncios> atualizaAnuncios(){
+        anuncia = new ArrayList<Anuncios>();
         Conexao conexao= new Conexao(AnuncioActivity.this);
         SQLiteDatabase database = conexao.getReadableDatabase();
         Cursor cursor = database.query("anuncios", null, null,
                  null, null, null, null);
         if(cursor.moveToFirst()){
             do{
+                int id = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
                 String nome= cursor.getString(cursor.getColumnIndexOrThrow("nome"));
                 String telefone= cursor.getString(cursor.getColumnIndexOrThrow("telefone"));
                 String ramo= cursor.getString(cursor.getColumnIndexOrThrow("ramo"));
                 String corpo= cursor.getString(cursor.getColumnIndexOrThrow("corpo"));
-                anuncia.add(new Anuncios( nome, telefone,ramo,  corpo));
+                anuncia.add(new Anuncios(id, nome, telefone, ramo, corpo));
 
             }while(cursor.moveToNext());
         }
