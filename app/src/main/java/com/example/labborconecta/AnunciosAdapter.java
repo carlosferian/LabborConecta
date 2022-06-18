@@ -1,11 +1,13 @@
 package com.example.labborconecta;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -36,11 +38,13 @@ public class AnunciosAdapter extends RecyclerView.Adapter<AnunciosAdapter.ViewHo
             telefoneRTextview= itemView.findViewById(R.id.telefoneRTextView);
             ramoRTextView=itemView.findViewById(R.id.ramoRTextView);
             corpoRTextView= itemView.findViewById(R.id.corpoREditTextMulti);
+
+            //inclusão do botão DELETAR para os anúncios, captura a ID e aciona a função
             itemView.findViewById(R.id.deletar).setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
                     Log.d("demo", "onClick: item cliked " + anuncio.getID());
-                    AnunciosDao dao = new AnunciosDao();
+                    AnunciosDao dao = new AnunciosDao(context);
                     dao.removerAnuncio(anuncio.getID());
                 }
             });
@@ -51,9 +55,9 @@ public class AnunciosAdapter extends RecyclerView.Adapter<AnunciosAdapter.ViewHo
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View view= LayoutInflater.from(context).inflate(R.layout.anuncio_recycle_view,
+            View view = LayoutInflater.from(context).inflate(R.layout.anuncio_recycle_view,
                     parent, false);
-            ViewHolder viewHolder= new ViewHolder(view);
+            ViewHolder viewHolder = new ViewHolder(view);
             return viewHolder;
     }
 
@@ -64,6 +68,8 @@ public class AnunciosAdapter extends RecyclerView.Adapter<AnunciosAdapter.ViewHo
         holder.telefoneRTextview.setText(anuncios.getTelefone());
         holder.ramoRTextView.setText(anuncios.getRamo());
         holder.corpoRTextView.setText(anuncios.getCorpo());
+
+        //inclui essa variável para poder pegar a id no botão Delete
         holder.anuncio = anuncios;
     }
 

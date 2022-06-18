@@ -40,9 +40,7 @@ public class AnuncioActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
     }
-
 
     public void adicionarAnuncio(View v){
         Intent intent = new Intent(this, NovoAnuncioActivity.class);
@@ -51,7 +49,7 @@ public class AnuncioActivity extends AppCompatActivity {
     }
     public ArrayList<Anuncios> atualizaAnuncios(){
         anuncia = new ArrayList<Anuncios>();
-        Conexao conexao= new Conexao(AnuncioActivity.this);
+        Conexao conexao = new Conexao(AnuncioActivity.this);
         SQLiteDatabase database = conexao.getReadableDatabase();
         Cursor cursor = database.query("anuncios", null, null,
                  null, null, null, null);

@@ -37,7 +37,7 @@ public class NovoAnuncioActivity extends AppCompatActivity {
         anuncios.setCorpo(corpoDoAnuncio.getText().toString());
         dao.inserirAnuncio(anuncios);
         Toast.makeText( getApplicationContext(), "Anunciado", Toast.LENGTH_SHORT).show();
-        Intent intent= new Intent(this,AnuncioActivity.class);
+        Intent intent = new Intent(this,AnuncioActivity.class);
         startActivity(intent);
 
     }

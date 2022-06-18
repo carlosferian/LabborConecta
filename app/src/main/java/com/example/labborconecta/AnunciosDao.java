@@ -30,16 +30,14 @@ public class AnunciosDao {
         values.put("ramo", anuncio.getRamo());
         values.put("corpo", anuncio.getCorpo());
         int count = (int) banco.insert("anuncios", null, values);
-        banco.close();
         return count;
 
     }
-
+    // método chamado no botão DELETE para excluir anúncio da base de dados.
     public int removerAnuncio(long id){
         String idAnuncio = String.valueOf(id);
         Log.d("teste", idAnuncio);
         int count = banco.delete("anuncios", "id=?", new String[]{idAnuncio});
-        banco.close();
         return count;
     }
 }
